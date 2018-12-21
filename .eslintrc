@@ -1,0 +1,24 @@
+{
+  "parser": "babel-eslint",
+  "extends": "fbjs",
+  "rules": {
+    "strict": 0,
+    "indent": [1, 2],
+    "quotes": [1, "single"],
+    "no-unused-vars": "warn",
+    "no-undef": "error",
+    "no-useless-escape": 0,
+    "max-len": 0
+  },
+  "env": {
+    "node": true,
+    "browser": true,
+    "mocha": true
+  },
+  "globals": {
+    "expect": true,
+    "apps": true,
+    "request": true,
+    "Promise": true
+  }
+}
