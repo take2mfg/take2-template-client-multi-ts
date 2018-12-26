@@ -6,7 +6,7 @@ import SignIn from '../screens/SignIn';
 
 const Root = () => {
   return (
-    <Router basename="/base">
+    <Router basename="/___base___">
       <React.Fragment>
         <Route exact path="/" component={Index} />
         <Route exact path="/signin" component={SignIn} />
