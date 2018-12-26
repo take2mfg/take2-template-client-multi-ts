@@ -2,7 +2,7 @@ import fs from 'fs-extra';
 import path from 'path';
 import { template } from 'lodash';
 
-export const appName = 'base';
+export const appName = '___base___';
 
 module.exports = {
   name: appName,
