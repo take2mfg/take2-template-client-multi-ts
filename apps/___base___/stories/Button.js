@@ -12,7 +12,7 @@ storiesOf('BaseApp|Button', module)
 
 storiesOf('BaseApp|Button/Emoji', module)
   .add('with some emoji', () => (
-    <Button><span role="img" aria-label="so cool">😀 😎 👍 💯</span></Button>
+    <Button onClick={action('button-click')}><span role="img" aria-label="so cool">😀 😎 👍 💯</span></Button>
   ), { info: { text: `
     ### Additional Info
     You can use markdown to add additional info to a story
