@@ -17,7 +17,7 @@ module.exports = {
     poll: 1000,
   },
 
-  entry: ['@babel/polyfill', path.resolve(__dirname, `../../${appName}/app.js`)],
+  entry: ['@babel/polyfill', path.resolve(__dirname, `../../${appName}/app.tsx`)],
 
   output: {
     path: path.resolve(__dirname, '../../../dist', appName),
@@ -44,6 +44,10 @@ module.exports = {
   externals: [
     'canvas',
   ],
+
+  resolve: {
+    extensions: ['.ts', '.tsx', '.js'],
+  },
 
   module: {
     rules: [
@@ -156,30 +160,29 @@ module.exports = {
         use: 'svg-url-loader',
       },
       {
-        test: /\.jsx?$/,
+        test: /\.tsx?$/,
         // exclude: /(node_modules|bower_components)/,
         use: {
           loader: 'babel-loader',
           options: {
-            'presets': ['@babel/preset-env', '@babel/preset-react'],
-            'plugins': ['lodash', ['transform-class-properties', { 'spec': true }], ['@babel/plugin-proposal-decorators', { 'legacy': true }]],
+            presets: [
+              '@babel/react', '@babel/typescript', ['@babel/env', { 'modules': false }],
+            ],
+            'plugins': [
+              '@babel/proposal-class-properties',
+              '@babel/proposal-object-rest-spread',
+              'lodash',
+              ['transform-class-properties', { 'spec': true }],
+              ['@babel/plugin-proposal-decorators', { 'legacy': true }],
+            ],
             'babelrc': false,
           },
         },
       },
       {
-        test: /\.jsx?$/,
-        include: /node_modules\/@take2/,
-        use: [
-          {
-            loader: 'babel-loader',
-            options: {
-              'presets': ['@babel/preset-env', '@babel/preset-flow', '@babel/preset-react'],
-              'plugins': [['transform-class-properties', { 'spec': true }],  ['@babel/plugin-proposal-decorators', { 'legacy': true }]],
-              'babelrc': false,
-            },
-          },
-        ],
+        test: /\.js$/,
+        use: ['source-map-loader'],
+        enforce: 'pre',
       },
     ],
   },
