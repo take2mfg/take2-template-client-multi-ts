@@ -119,7 +119,8 @@
     "test:visual": "STORYBOOK=true jest",
     "test-watch": "jest --verbose --watch",
     "storybook": "start-storybook -p 9001 -c .storybook",
-    "storybook-ci": "start-storybook -p 9001 -c .storybook"
+    "storybook-ci": "start-storybook -p 9001 -c .storybook",
+    "storybook:build": "build-storybook -c .storybook -o .storybook-static"
   },
   "author": "",
   "license": "MIT"
