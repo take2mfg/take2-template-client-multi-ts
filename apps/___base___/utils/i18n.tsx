@@ -1,9 +1,7 @@
-import i18n from 'i18next';
+import * as i18n from 'i18next';
 import detector from 'i18next-browser-languagedetector';
 import { reactI18nextModule } from 'react-i18next';
-import get from 'lodash/get';
-import includes from 'lodash/includes';
-import keys from 'lodash/keys';
+import { get, includes, keys } from 'lodash';
 
 import translationEN from '../public/locales/en/translation.json';
 import translationES from '../public/locales/es/translation.json';

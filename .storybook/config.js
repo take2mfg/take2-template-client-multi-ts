@@ -1,4 +1,4 @@
-import { configure, setAddon, addDecorator } from '@storybook/react';
+import { configure, addDecorator } from '@storybook/react';
 import { withOptions } from '@storybook/addon-options';
 import { withInfo } from '@storybook/addon-info';
 import { checkA11y } from '@storybook/addon-a11y';
@@ -85,7 +85,7 @@ addDecorator(checkA11y);
 addDecorator(withInfo);
 
 function loadStories() {
-  require('../apps/___base___/stories/index.js');
+  require('../apps/___base___/stories/index.tsx');
   // You can require as many stories as you need.
 }
 

@@ -1,6 +1,5 @@
 import React from 'react';
-import get from 'lodash/get';
-import map from 'lodash/map';
+import { get, map } from 'lodash';
 import { compose } from 'redux';
 import { withNamespaces } from 'react-i18next';
 import { Link } from 'react-router-dom';

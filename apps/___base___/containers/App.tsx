@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { ApolloProvider } from 'react-apollo';
 
 import Routes from './Routes';
 
 import { createClient } from '../graphql/client';
 
-class App extends Component {
+class App extends React.Component {
   constructor(props) {
     super(props);
     this.client = createClient();
