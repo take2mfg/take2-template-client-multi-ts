@@ -8,8 +8,10 @@ import { createClient } from '../graphql/client';
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.client = createClient();
+    this.client = createClient({});
   }
+
+  client: any
 
   render() {
     return (
