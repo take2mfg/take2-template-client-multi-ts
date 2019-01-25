@@ -8,7 +8,7 @@
         "jsx": "react",
         "esModuleInterop": true,
         "moduleResolution": "node",
-        "lib": [ "es2015", "dom" ]
+        "lib": [ "esnext", "dom" ]
     },
     "include": [
         "./apps/**/*"
