@@ -13,7 +13,6 @@ const { store } = configureStore();
 // store.dispatch(someAction(props));
 
 const startApp = async () => {
-
   // Set up a fakeApp method for development, because app filling sucks.
   // window.fillForm = process.env.NODE_ENV === 'production' ? () => {} : () => {
   //   const form = 'sampleform';
@@ -29,7 +28,7 @@ const startApp = async () => {
         <App />
       </I18nextProvider>
     </Provider>,
-    document.getElementById('root')
+    document.getElementById('root'),
   );
 };
 

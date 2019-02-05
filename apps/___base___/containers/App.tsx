@@ -11,7 +11,7 @@ class App extends React.Component {
     this.client = createClient({});
   }
 
-  client: any
+  client: any;
 
   render() {
     return (

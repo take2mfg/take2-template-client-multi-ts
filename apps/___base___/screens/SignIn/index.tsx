@@ -8,17 +8,13 @@ import SampleForm from '../../components/SampleForm';
 const _SignIn = ({ t }) => {
   return (
     <div>
-      <p>
-        {t('Sign In')}
-      </p>
+      <p>{t('Sign In')}</p>
       <SampleForm />
       <Link to="/">{t('Hello World')}</Link>
     </div>
   );
 };
 
-const SignIn = compose(
-  withNamespaces()
-)(_SignIn);
+const SignIn = compose(withNamespaces())(_SignIn);
 
 export default SignIn;

@@ -26,17 +26,17 @@ const getDefaultLanguage = () => {
 
 i18n
   .use(detector)
-  .use(reactI18nextModule)  // passes i18n down to react-i18next
+  .use(reactI18nextModule) // passes i18n down to react-i18next
   .init({
     resources,
     lng: getDefaultLanguage(),
     fallbackLng: 'en',
 
-    keySeparator: false,  // we do not use keys in form messages.welcome
+    keySeparator: false, // we do not use keys in form messages.welcome
     nsSeparator: false, // we are not namespacing
 
     interpolation: {
-      escapeValue: false,  // react already safes from xss
+      escapeValue: false, // react already safes from xss
     },
   });
 

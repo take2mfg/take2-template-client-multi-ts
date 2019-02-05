@@ -12,7 +12,6 @@ import { ApolloLink } from 'apollo-link';
   SAMPLE SERVER GRAPH ENDPOINT - https://1x5noor93.sse.codesandbox.io/graphql
 */
 
-
 export const createClient = options => {
   const cache = new InMemoryCache({
     // Example of modifying cache key

@@ -1,17 +1,22 @@
 {
-    "compilerOptions": {
-        "outDir": "./dist/",
-        "sourceMap": true,
-        "noImplicitAny": false,
-        "module": "commonjs",
-        "target": "es5",
-        "jsx": "react",
-        "esModuleInterop": true,
-        "resolveJsonModule": true,
-        "moduleResolution": "node",
-        "lib": [ "esnext", "dom" ]
-    },
-    "include": [
-        "./apps/**/*"
-    ]
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": false,
+    "noEmit": true,
+    "noImplicitAny": false,
+    "sourceMap": true,
+    "strictNullChecks": false,
+    "jsx": "react"
+  },
+  "include": ["./apps/**/*.tsx"]
 }

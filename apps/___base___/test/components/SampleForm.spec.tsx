@@ -7,18 +7,17 @@ import { reducer as formReducer, Field } from 'redux-form';
 import SampleForm, { required } from '../../components/SampleForm';
 
 describe('SampleForm - Component (example)', () => {
-
   let store;
   let component;
 
   // Strap up a real version of the form
   beforeEach(() => {
     store = createStore(combineReducers({ form: formReducer }));
-    component = mount((
+    component = mount(
       <Provider store={store}>
         <SampleForm />
-      </Provider>
-    ));
+      </Provider>,
+    );
   });
 
   test('testing an input exists', () => {
@@ -27,13 +26,17 @@ describe('SampleForm - Component (example)', () => {
 
   test('testing state after a change', () => {
     const value = 'Test';
-    component.find('input[name="email"]').simulate('change', { target: { value } });
+    component
+      .find('input[name="email"]')
+      .simulate('change', { target: { value } });
     expect(store.getState().form.testForm.values.email).toEqual(value);
   });
 
   test('testing state after a change (with snapshot)', () => {
     const value = 'Test';
-    component.find('input[name="email"]').simulate('change', { target: { value } });
+    component
+      .find('input[name="email"]')
+      .simulate('change', { target: { value } });
     expect(store.getState()).toMatchSnapshot();
   });
 
@@ -42,18 +45,17 @@ describe('SampleForm - Component (example)', () => {
     expect(store.getState()).toMatchSnapshot();
   });
 
-
   test('testing if a validator on a field', () => {
-    expect(component.contains(
-      <Field
-        name="email"
-        component="input"
-        type="text"
-        placeholder="Email"
-        validate={[required]}
-      />
-    )).toEqual(true);
+    expect(
+      component.contains(
+        <Field
+          name="email"
+          component="input"
+          type="text"
+          placeholder="Email"
+          validate={[required]}
+        />,
+      ),
+    ).toEqual(true);
   });
-
-
 });

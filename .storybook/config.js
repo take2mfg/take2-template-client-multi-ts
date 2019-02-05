@@ -78,7 +78,7 @@ addDecorator(
      * @type {Boolean}
      */
     enableShortcuts: true, // true by default
-  })
+  }),
 );
 
 addDecorator(checkA11y);
