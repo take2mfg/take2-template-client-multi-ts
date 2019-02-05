@@ -2,7 +2,7 @@ import React from 'react';
 import { compose } from 'redux';
 import { Form, Field, reduxForm } from 'redux-form';
 
-export const required = value => value ? undefined : 'required';
+export const required = value => (value ? undefined : 'required');
 
 const _SampleForm = ({ handleSubmit }) => (
   <Form onSubmit={handleSubmit({})}>
@@ -27,7 +27,7 @@ const _SampleForm = ({ handleSubmit }) => (
 const SampleForm = compose(
   reduxForm({
     form: 'testForm',
-  })
+  }),
 )(_SampleForm);
 
 export default SampleForm;

@@ -10,22 +10,23 @@ import { SHOPS } from '../../graphql/queries';
 const _Index = ({ t }) => {
   return (
     <div>
-      <p>
-        {t('Hello World')}
-      </p>
+      <p>{t('Hello World')}</p>
       <Link to="/signin">{t('Sign In')}</Link>
       <Query query={SHOPS}>
         {({ data, loading, error }) => {
-
           if (loading) {
-            return (
-              <p>Loading...</p>
-            );
+            return <p>Loading...</p>;
           }
 
           if (error) {
             return (
-              <p>Try opening <a href="https://codesandbox.io/s/1x5noor93" target="_blank">https://codesandbox.io/s/1x5noor93</a> to restart the server</p>
+              <p>
+                Try opening{' '}
+                <a href="https://codesandbox.io/s/1x5noor93" target="_blank">
+                  https://codesandbox.io/s/1x5noor93
+                </a>{' '}
+                to restart the server
+              </p>
             );
           }
 
@@ -33,19 +34,13 @@ const _Index = ({ t }) => {
             <li key={id}>{name}</li>
           ));
 
-          return (
-            <ul>
-              {shops}
-            </ul>
-          );
+          return <ul>{shops}</ul>;
         }}
       </Query>
     </div>
   );
 };
 
-const Index = compose(
-  withNamespaces()
-)(_Index);
+const Index = compose(withNamespaces())(_Index);
 
 export default Index;

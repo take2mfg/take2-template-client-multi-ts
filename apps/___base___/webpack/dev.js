@@ -8,7 +8,7 @@ const appName = require('../route').name;
 module.exports = {
   name: appName,
 
-  watch:true,
+  watch: true,
 
   mode: 'development',
 
@@ -17,7 +17,10 @@ module.exports = {
     poll: 1000,
   },
 
-  entry: ['@babel/polyfill', path.resolve(__dirname, `../../${appName}/app.tsx`)],
+  entry: [
+    '@babel/polyfill',
+    path.resolve(__dirname, `../../${appName}/app.tsx`),
+  ],
 
   output: {
     path: path.resolve(__dirname, '../../../dist', appName),
@@ -41,9 +44,7 @@ module.exports = {
     }),
   ],
 
-  externals: [
-    'canvas',
-  ],
+  externals: ['canvas'],
 
   resolve: {
     extensions: ['.ts', '.tsx', '.js'],
@@ -166,16 +167,18 @@ module.exports = {
           loader: 'babel-loader',
           options: {
             presets: [
-              '@babel/react', '@babel/typescript', ['@babel/env', { 'modules': false }],
+              '@babel/react',
+              '@babel/typescript',
+              ['@babel/env', { modules: false }],
             ],
-            'plugins': [
+            plugins: [
               '@babel/proposal-class-properties',
               '@babel/proposal-object-rest-spread',
               'lodash',
-              ['transform-class-properties', { 'spec': true }],
-              ['@babel/plugin-proposal-decorators', { 'legacy': true }],
+              ['transform-class-properties', { spec: true }],
+              ['@babel/plugin-proposal-decorators', { legacy: true }],
             ],
-            'babelrc': false,
+            babelrc: false,
           },
         },
       },

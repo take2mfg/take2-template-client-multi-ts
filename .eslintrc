@@ -1,10 +1,16 @@
 {
-  "parser": "babel-eslint",
-  "extends": "fbjs",
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "useJSXTextNode": true,
+    "project": "./tsconfig.json"
+  },
+  "plugins": ["@typescript-eslint"],
+  "extends": ["fbjs", "eslint-config-prettier", "prettier/@typescript-eslint"],
   "rules": {
     "strict": 0,
-    "indent": [1, 2],
-    "quotes": [1, "single"],
     "no-unused-vars": "warn",
     "no-undef": "error",
     "no-useless-escape": 0,

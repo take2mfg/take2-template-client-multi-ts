@@ -8,7 +8,10 @@ module.exports = {
 
   mode: 'production',
 
-  entry: ['@babel/polyfill', path.resolve(__dirname, `../../${appName}/app.js`)],
+  entry: [
+    '@babel/polyfill',
+    path.resolve(__dirname, `../../${appName}/app.js`),
+  ],
 
   output: {
     path: path.resolve(__dirname, '../../../dist', appName),
@@ -19,13 +22,9 @@ module.exports = {
     runtimeChunk: true,
   },
 
-  plugins: [
-    new ManifestPlugin(),
-  ],
+  plugins: [new ManifestPlugin()],
 
-  externals: [
-    'canvas',
-  ],
+  externals: ['canvas'],
 
   module: {
     rules: [
@@ -143,9 +142,13 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            'presets': ['@babel/preset-env', '@babel/preset-react'],
-            'plugins': ['lodash', ['transform-class-properties', { 'spec': true }], ['@babel/plugin-proposal-decorators', { 'legacy': true }]],
-            'babelrc': false,
+            presets: ['@babel/preset-env', '@babel/preset-react'],
+            plugins: [
+              'lodash',
+              ['transform-class-properties', { spec: true }],
+              ['@babel/plugin-proposal-decorators', { legacy: true }],
+            ],
+            babelrc: false,
           },
         },
       },
@@ -156,9 +159,16 @@ module.exports = {
           {
             loader: 'babel-loader',
             options: {
-              'presets': ['@babel/preset-env', '@babel/preset-flow', '@babel/preset-react'],
-              'plugins': [['transform-class-properties', { 'spec': true }],  ['@babel/plugin-proposal-decorators', { 'legacy': true }]],
-              'babelrc': false,
+              presets: [
+                '@babel/preset-env',
+                '@babel/preset-flow',
+                '@babel/preset-react',
+              ],
+              plugins: [
+                ['transform-class-properties', { spec: true }],
+                ['@babel/plugin-proposal-decorators', { legacy: true }],
+              ],
+              babelrc: false,
             },
           },
         ],
